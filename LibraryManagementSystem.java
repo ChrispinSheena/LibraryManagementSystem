@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class LibraryManagementSystem {
     private static final String URL = "jdbc:mysql://localhost:3306/library_management";
     private static final String USERNAME = "root";  // Replace with your MySQL username
-    private static final String PASSWORD = "";      // Replace with your MySQL password
+    private static final String PASSWORD = "root";      // Replace with your MySQL password
 
     private Connection connection;
 
