@@ -1,0 +1,29 @@
+CREATE DATABASE library_management;
+
+USE library_management;
+
+-- Table to store book details
+CREATE TABLE books (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    available BOOLEAN DEFAULT TRUE
+);
+
+-- Table to store user details
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    role ENUM('admin', 'user')
+);
+
+-- Table to store borrowing records
+CREATE TABLE borrow_records (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    book_id INT,
+    borrow_date DATE,
+    return_date DATE,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (book_id) REFERENCES books(id)
+);
